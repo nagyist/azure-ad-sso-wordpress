@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Single Sign-on with Azure Active Directory (for "
+"Project-Id-Version: Single Sign-on with Microsoft Entra ID (for "
 "WordPress) v0.6a\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-06 13:58+0200\n"
@@ -64,16 +64,16 @@ msgstr "Alte Einstellungen aus <code>%s</code> konnten nicht migriert werden. "
 # @ aad-sso-wordpress
 #: SettingsPage.php:144
 msgid ""
-"Single Sign-on with Azure Active Directory settings have been reset to "
+"Single Sign-on with Microsoft Entra ID settings have been reset to "
 "default."
 msgstr ""
-"Die Single Sign-On mit Azure Active Directory Einstellungen wurden auf die "
+"Die Single Sign-On mit Microsoft Entra ID Einstellungen wurden auf die "
 "Standardwerte zurückgesetzt."
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:155
-msgid "Azure Active Directory Settings"
-msgstr "Azure Active Directory Einstellungen"
+msgid "Microsoft Entra ID Settings"
+msgstr "Microsoft Entra ID Einstellungen"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:183
@@ -120,28 +120,28 @@ msgstr "Automatische Provisionierung aktivieren"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:254
-msgid "Enable auto-forward to Azure AD"
-msgstr "Automatische Weiterleitung zum Azure Active Directory aktivieren"
+msgid "Enable auto-forward to Microsoft Entra ID"
+msgstr "Automatische Weiterleitung zum Microsoft Entra ID aktivieren"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:262
-msgid "Enable Azure AD group to WP role association"
-msgstr "Azure AD Gruppen zu WordPress Rollen Zuordnung aktivieren"
+msgid "Enable Microsoft Entra ID group to WordPress role association"
+msgstr "Microsoft Entra ID Gruppen zu WordPress Rollen Zuordnung aktivieren"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:270
-msgid "Default WordPress role if not in Azure AD group"
-msgstr "Standard WordPress-Rolle falls nicht in Azure AD Gruppe"
+msgid "Default WordPress role if not in Microsoft Entra ID group"
+msgstr "Standard WordPress-Rolle falls nicht in Microsoft Entra ID Gruppe"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:278
-msgid "WordPress role to Azure AD group map"
-msgstr "WordPress Rollen-Zuordnung zu Azure AD Gruppen"
+msgid "WordPress role to Microsoft Entra ID group map"
+msgstr "WordPress Rollen-Zuordnung zu Microsoft Entra ID Gruppen"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:380
-msgid "Map WordPress roles to Azure Active Directory groups."
-msgstr "WordPress Rollen zu Azure Active Directory Gruppen zuordnen."
+msgid "Map WordPress roles to Microsoft Entra ID groups."
+msgstr "WordPress Rollen zu Microsoft Entra ID Gruppen zuordnen."
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:385
@@ -150,7 +150,7 @@ msgstr "WordPress-Rolle"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:386
-msgid "Azure AD Group Object ID"
+msgid "Microsoft Entra ID Group Object ID"
 msgstr "Azure Gruppen-Objekt ID"
 
 # @ aad-sso-wordpress
@@ -162,7 +162,7 @@ msgstr ""
 # @ aad-sso-wordpress
 #: SettingsPage.php:426
 msgid ""
-"Provides a hint to Azure AD about the domain or tenant they will be logging "
+"Provides a hint to Microsoft Entra ID about the domain or tenant they will be logging "
 "in to. If the domain is federated, the user will be automatically redirected "
 "to federation endpoint."
 msgstr ""
@@ -172,14 +172,14 @@ msgstr ""
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:439
-msgid "The client ID of the Azure AD application representing this blog."
-msgstr "Die Client ID der Azure AD Anwendung, die diesen Blog repräsentiert."
+msgid "The client ID of the Microsoft Entra ID application representing this blog."
+msgstr "Die Client ID der Microsoft Entra ID Anwendung, die diesen Blog repräsentiert."
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:450
-msgid "A secret key for the Azure AD application representing this blog."
+msgid "A secret key for the Microsoft Entra ID application representing this blog."
 msgstr ""
-"Der geheime Schlüssel für die Azure AD Anwendung, die diesen Blog "
+"Der geheime Schlüssel für die Microsoft Entra ID Anwendung, die diesen Blog "
 "repräsentiert."
 
 #: SettingsPage.php:463 SettingsPage.php:480
@@ -188,13 +188,13 @@ msgstr "Auf Standard zurücksetzen"
 
 #: SettingsPage.php:464
 msgid ""
-"The URL where the user is redirected to after authenticating with Azure AD. "
-"This URL must be registered in Azure AD as a valid redirect URL, and it must "
+"The URL where the user is redirected to after authenticating with Microsoft Entra ID. "
+"This URL must be registered in Microsoft Entra ID as a valid redirect URL, and it must "
 "be a page that invokes the \"authenticate\" filter. If you don't know what "
 "to set, leave the default value (which is this blog's login page)."
 msgstr ""
-"Die URL zu der der Benutzer weitergeleitet wird, nachdem er per Azure AD "
-"angemeldet wurde. Diese URL muss in Azure AD als gültige Weiterleitungs-URL "
+"Die URL zu der der Benutzer weitergeleitet wird, nachdem er per Microsoft Entra ID "
+"angemeldet wurde. Diese URL muss in Microsoft Entra ID als gültige Weiterleitungs-URL "
 "hinterlegt sein und es muss sich um eine Seite handeln, die den "
 "„authenticate“-Filter von WordPress auslöst. Falls Sie sich über dieses Feld "
 "unsicher sind, belassen Sie es auf dem Standard-Wert (der URL zur Login-"
@@ -202,15 +202,15 @@ msgstr ""
 
 #: SettingsPage.php:481
 msgid ""
-"The URL where the user is redirected to after signing out of Azure AD. This "
-"URL must be registered in Azure AD as a valid redirect URL. (This does not "
+"The URL where the user is redirected to after signing out of Microsoft Entra ID. This "
+"URL must be registered in Microsoft Entra ID as a valid redirect URL. (This does not "
 "affect  logging out of the blog, it is only used when logging out of Azure "
 "AD.)"
 msgstr ""
 "Die URL, zu der der Benutzer weitergeleitet wird nachdem er sich bei Azure "
-"AD abgemeldet hat. Diese URL muss in Azure AD als gültige Weiterleitungs-URL "
+"AD abgemeldet hat. Diese URL muss in Microsoft Entra ID als gültige Weiterleitungs-URL "
 "hinterlegt sein. (Dies beeinflusst nicht das Abmelden vom Blog, sondern wird "
-"nur verwendet beim Logout von Azure AD.)"
+"nur verwendet beim Logout von Microsoft Entra ID.)"
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:498
@@ -226,45 +226,45 @@ msgstr "Login-Name"
 #: SettingsPage.php:507
 msgid ""
 "This specifies the WordPress user field which will be used to match to the "
-"Azure AD user's UserPrincipalName. Email Address is fine for most instances."
+"Microsoft Entra ID user's UserPrincipalName. Email Address is fine for most instances."
 msgstr ""
 "Hier geben Sie das Feld eines WordPress Benutzers an, welches zum Abgleich "
-"mit dem UserPrincipalName des Azure AD Benutzers verwendet wird. Die E-Mail-"
+"mit dem UserPrincipalName des Microsoft Entra ID Benutzers verwendet wird. Die E-Mail-"
 "Adresse genügt in den meisten Fällen."
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:534
 msgid ""
-"This is the default role that users will be assigned to if matching Azure AD "
+"This is the default role that users will be assigned to if matching Microsoft Entra ID "
 "group to WordPress roles is enabled."
 msgstr ""
 "Dies ist die Standard-Rolle, die Benutzern zugeordnet wird wenn die "
-"Zuordnung von Azure AD Gruppen zu WordPress-Rollen aktiviert ist."
+"Zuordnung von Microsoft Entra ID Gruppen zu WordPress-Rollen aktiviert ist."
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:545
 msgid ""
-"Automatically create WordPress users, if needed, for authenticated Azure AD "
+"Automatically create WordPress users, if needed, for authenticated Microsoft Entra ID "
 "users."
 msgstr ""
-"Automatisch Wordpress-Benutzerkonten für authentifizierte Azure AD Benutzer "
+"Automatisch Wordpress-Benutzerkonten für authentifizierte Microsoft Entra ID Benutzer "
 "anlegen, falls nötig."
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:556
 msgid ""
-"Automatically forward users to the Azure AD to sign in, skipping the "
+"Automatically forward users to the Microsoft Entra ID to sign in, skipping the "
 "WordPress login screen."
 msgstr ""
-"Benutzer werden automatisch zum Azure AD Login umgeleitet, der WordPress-"
+"Benutzer werden automatisch zum Microsoft Entra ID Login umgeleitet, der WordPress-"
 "Anmeldebildschirm wird übersprungen."
 
 # @ aad-sso-wordpress
 #: SettingsPage.php:567
 msgid ""
-"Automatically assign WordPress user roles based on Azure AD group membership."
+"Automatically assign WordPress user roles based on Microsoft Entra ID group membership."
 msgstr ""
-"Automatisch WordPress Benutzerrollen anhand der Zugehörigkeit zu Azure AD "
+"Automatisch WordPress Benutzerrollen anhand der Zugehörigkeit zu Microsoft Entra ID "
 "Gruppen zuweisen."
 
 # @ aad-sso-wordpress
@@ -282,9 +282,9 @@ msgstr "FEHLER: Ungültiges id_token. %s"
 # @ aad-sso-wordpress
 #: aad-sso-wordpress.php:288
 #, php-format
-msgid "ERROR: Could not get an access token to Azure Active Directory. %s"
+msgid "ERROR: Could not get an access token to Microsoft Entra ID. %s"
 msgstr ""
-"Fehler: Konnte kein Access Token für Azure Active Directory erlangen. %s"
+"Fehler: Konnte kein Access Token für Microsoft Entra ID erlangen. %s"
 
 # @ aad-sso-wordpress
 #: aad-sso-wordpress.php:295
@@ -294,8 +294,8 @@ msgstr "FEHLER: Es trat ein unbekannter Fehler auf."
 # @ aad-sso-wordpress
 #: aad-sso-wordpress.php:304
 #, php-format
-msgid "ERROR: Access denied to Azure Active Directory. %s"
-msgstr "FEHLER: Zugriff zu Azure Active Directory verweigert. %s"
+msgid "ERROR: Access denied to Microsoft Entra ID. %s"
+msgstr "FEHLER: Zugriff zu Microsoft Entra ID verweigert. %s"
 
 # @ aad-sso-wordpress
 #: aad-sso-wordpress.php:345
@@ -315,10 +315,10 @@ msgstr ""
 # @ aad-sso-wordpress
 #: aad-sso-wordpress.php:480
 msgid ""
-"Single Sign-on with Azure Active Directory required settings are not "
-"defined. Update them under Settings > Azure AD."
+"Single Sign-on with Microsoft Entra ID required settings are not "
+"defined. Update them under Settings > Microsoft Entra ID."
 msgstr ""
-"Erforderliche Einstellungen für Single Sign-On mit Azure Active Directory "
+"Erforderliche Einstellungen für Single Sign-On mit Microsoft Entra ID "
 "wurden nicht definiert. Aktualisieren Sie diese unter Einstellungen > Azure "
 "AD."
 
@@ -336,15 +336,15 @@ msgstr "Abmelden"
 # @ aad-sso-wordpress
 #. Plugin Name of the plugin/theme
 #: view/settings.php:3
-msgid "Single Sign-on with Azure Active Directory"
-msgstr "Single Sign-On mit Azure Active Directory"
+msgid "Single Sign-on with Microsoft Entra ID"
+msgstr "Single Sign-On mit Microsoft Entra ID"
 
 #: view/settings.php:4
 msgid ""
-"Settings for configuring single sign-on with Azure Active Directory can be "
+"Settings for configuring single sign-on with Microsoft Entra ID can be "
 "configured here."
 msgstr ""
-"Einstellungen für den Single Sign-On mit Azure Active Directory können hier "
+"Einstellungen für den Single Sign-On mit Microsoft Entra ID können hier "
 "vorgenommen werden."
 
 # @ aad-sso-wordpress
@@ -426,15 +426,15 @@ msgstr "http://github.com/psignoret/aad-sso-wordpress"
 # @ aad-sso-wordpress
 #. Description of the plugin/theme
 msgid ""
-"Allows you to use your organization's Azure Active Directory user accounts "
+"Allows you to use your organization's Microsoft Entra ID user accounts "
 "to log in to WordPress. If your organization is using Office 365, your user "
-"accounts are already in Azure Active Directory. This plugin uses OAuth 2.0 "
-"to authenticate users, and the Azure Active Directory Graph to get group "
+"accounts are already in Microsoft Entra ID. This plugin uses OAuth 2.0 "
+"to authenticate users, and the Microsoft Entra ID Graph to get group "
 "membership and other details."
 msgstr ""
-"Erlaubt es den Benutzerkonten aus Ihrem Azure Active Directory, sich in "
+"Erlaubt es den Benutzerkonten aus Ihrem Microsoft Entra ID, sich in "
 "WordPress anzumelden. Falls Ihre Organisation Office 365 verwendet, sind "
-"Ihre Benutzerkonten bereits in Azure Active Directory hinterlegt. Dieses "
+"Ihre Benutzerkonten bereits in Microsoft Entra ID hinterlegt. Dieses "
 "Plugin verwendet OAuth 2.0 um Benutzer zu authentifizieren, sowie den Azure "
 "Active Directory Graph um Gruppenzugehörigkeiten und andere Details "
 "abzurufen."
@@ -452,7 +452,7 @@ msgstr "http://psignoret.com/"
 
 # @ aad-sso-wordpress
 #~ msgid ""
-#~ "Settings for configuring single sign-on with Azure Active Directory can "
+#~ "Settings for configuring single sign-on with Microsoft Entra ID can "
 #~ "be configured\n"
 #~ "\t\there."
 #~ msgstr ""

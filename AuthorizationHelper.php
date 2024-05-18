@@ -1,7 +1,7 @@
 <?php
 
 /**
- * A helper class used to request authorization and access tokens Azure Active Directory.
+ * A helper class used to request authorization and access tokens Microsoft Entra ID.
  */
 class AADSSO_AuthorizationHelper
 {

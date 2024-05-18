@@ -1,4 +1,4 @@
-# Contributing to Sign Sign-on with Azure Active Directory (for WordPress)
+# Contributing to Sign Sign-on with Microsoft Entra ID (for WordPress)
 This WordPress plugin is actively maintained by contributors like you.  Contributing is easy.
 
 ## Getting Started
@@ -6,7 +6,7 @@ If you would like to contribute, but you don't have any ideas where to begin, ch
 
 ## Reporting Bugs
 - Make sure the bug doesn't already exist (search the [Issue Tracker](https://github.com/psignoret/aad-sso-wordpress/issues)).  If the bug has already been submitted, use the discussion thread on the issue to add any helpful supporting details.
-- Include any errors you receive.  Please redact any information that might identify your Azure AD instances.
+- Include any errors you receive.  Please redact any information that might identify your Microsoft Entra ID instances.
 - Include any steps to reproduce the bug.
 - Include the expected output or behavior.  It should be clear _why_ you think you found a bug.
 

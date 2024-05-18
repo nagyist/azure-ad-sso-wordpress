@@ -29,7 +29,7 @@ class AADSSO_Settings {
 	public $redirect_uri = '';
 
 	/**
-	 * @var string The URL to redirect to after signing out (of Azure AD, not WordPress).
+	 * @var string The URL to redirect to after signing out (of Microsoft Entra ID, not WordPress).
 	 */
 	public $logout_redirect_uri = '';
 
@@ -64,7 +64,7 @@ class AADSSO_Settings {
 
 	/**
 	* Indicates whether or not a WordPress user should be auto-provisioned if a user is able to
-	* authenticate with Azure AD, but was not matched to a current WordPress user.
+	* authenticate with Microsoft Entra ID, but was not matched to a current WordPress user.
 	*
 	* @var boolean Whether or not to auto-provision a new user.
 	*/
@@ -100,14 +100,14 @@ class AADSSO_Settings {
 	 * This used only if $enable_aad_group_to_wp_role is true. Empty or null means that access will
 	 * be denied to users who are not members of the groups defined in $aad_group_to_wp_role_map.
 	 *
-	 * @var string The default WordPress role to assign a user if not in any Azure AD group.
+	 * @var string The default WordPress role to assign a user if not in any Microsoft Entra ID group.
 	 */
 	public $default_wp_role = null;
 
 	/**
-	* Indicates whether a logout of WordPress should also trigger a logout of Azure AD.
+	* Indicates whether a logout of WordPress should also trigger a logout of Microsoft Entra ID.
 	*
-	* @var boolean Whether or not logging out of WordPress triggers logging out of Azure AD.
+	* @var boolean Whether or not logging out of WordPress triggers logging out of Microsoft Entra ID.
 	*/
 	public $enable_full_logout = false;
 
@@ -194,7 +194,7 @@ class AADSSO_Settings {
 	}
 
 	/**
-	 * Initializes values for using stored settings and cached Azure AD configuration.
+	 * Initializes values for using stored settings and cached Microsoft Entra ID configuration.
 	 *
 	 * @return \AADSSO_Settings The (only) configured instance of this class.
 	 */

@@ -1,11 +1,11 @@
 <?php
 
 /*
-Plugin Name: Single Sign-on with Azure Active Directory
+Plugin Name: Single Sign-on with Microsoft Entra ID
 Plugin URI: http://github.com/psignoret/aad-sso-wordpress
-Description: Allows you to use your organization's Azure Active Directory user accounts to log in to WordPress. If your organization is using Office 365, your user accounts are already in Azure Active Directory. This plugin uses OAuth 2.0 to authenticate users, and the Microsoft Graph API to get group membership and other details.
+Description: Allows you to use your organization's Microsoft Entra ID (formerly known as Azure Active Directory) user accounts to log in to WordPress. If your organization is using Office 365, your user accounts are already in Microsoft Entra ID. This plugin uses OAuth 2.0 to authenticate users, and the Microsoft Graph API to get group membership and other details.
 Author: Philippe Signoret
-Version: 0.7.0
+Version: 0.7.1
 Author URI: https://www.psignoret.com/
 Text Domain: aad-sso-wordpress
 Domain Path: /languages/
@@ -159,12 +159,12 @@ class AADSSO {
 		
 		/*
 		 * This offers a query parameter to offer an easy method to skip any sort of automatic 
-		 * redirect to Azure AD, displaying the login form instead. This check is intentionally
+		 * redirect to Microsoft Entra ID, displaying the login form instead. This check is intentionally
 		 * done after the 'aad_auto_forward_login' filter is applied, to ensure it also overrides
 		 * any filters.
 		 */ 
 		if ( isset( $_GET['aadsso_no_redirect'] ) ) {
-			AADSSO::debug_log( 'Skipping automatic redirects to Azure AD.' );
+			AADSSO::debug_log( 'Skipping automatic redirects to Microsoft Entra ID.' );
 			$auto_redirect = FALSE;
 		}
 
@@ -234,10 +234,10 @@ class AADSSO {
 	}
 
 	/**
-	 * Authenticates the user with Azure AD and WordPress.
+	 * Authenticates the user with Microsoft Entra ID and WordPress.
 	 *
 	 * This method, invoked as an 'authenticate' filter, implements the OpenID Connect
-	 * Authorization Code Flow grant to sign the user in to Azure AD (if they aren't already),
+	 * Authorization Code Flow grant to sign the user in to Microsoft Entra ID (if they aren't already),
 	 * obtain an ID Token to identify the current user, and obtain an Access Token to access
 	 * the Microsoft Graph API.
 	 *
@@ -252,7 +252,7 @@ class AADSSO {
 		// Don't re-authenticate if already authenticated
 		if ( is_a( $user, 'WP_User' ) ) { return $user; }
 
-		/* If 'code' is present, this is the Authorization Response from Azure AD, and 'code' has
+		/* If 'code' is present, this is the Authorization Response from Microsoft Entra ID, and 'code' has
 		 * the Authorization Code, which will be exchanged for an ID Token and an Access Token.
 		 */
 		if ( isset( $_GET['code'] ) ) {
@@ -305,7 +305,7 @@ class AADSSO {
 					// TODO: Check if scopes from token response include necessary permissions for checking
 					//       group membership and if not, re-do the sign in with prompt=consent.
 
-					// If we're mapping Azure AD groups to WordPress roles, make the Graph API call here
+					// If we're mapping Microsoft Entra ID groups to WordPress roles, make the Graph API call here
 					AADSSO_GraphHelper::$settings  = $this->settings;
 
 					// Of the AAD groups defined in the settings, get only those where the user is a member
@@ -315,7 +315,7 @@ class AADSSO {
 					// Validate response to throw an early error if unable to check group membership.
 					if ( isset( $group_memberships->value ) ) {
 						AADSSO::debug_log( sprintf(
-							'Azure AD user \'%s\' is a member of [%s]',
+							'Microsoft Entra ID user \'%s\' is a member of [%s]',
 							$jwt->oid, implode( ',', $group_memberships->value ) ), 20
 						);
 					} elseif ( isset ( $group_memberships->error ) ) {
@@ -391,7 +391,7 @@ class AADSSO {
 
 	function get_wp_user_from_aad_user( $jwt, $group_memberships ) {
 
-		// Try to find an existing user in WP where the upn or unique_name of the current Azure AD user is
+		// Try to find an existing user in WP where the upn or unique_name of the current Microsoft Entra ID user is
 		// (depending on config) the 'login' or 'email' field in WordPress
 		$unique_name = isset( $jwt->upn ) ? $jwt->upn : ( isset( $jwt->unique_name ) ? $jwt->unique_name : null );
 		if ( null === $unique_name ) {
@@ -413,10 +413,10 @@ class AADSSO {
 
 		if ( is_a( $user, 'WP_User' ) ) {
 			AADSSO::debug_log( sprintf(
-				'Matched Azure AD user [%s] to existing WordPress user [%s].', $unique_name, $user->ID ), 10 );
+				'Matched Microsoft Entra ID user [%s] to existing WordPress user [%s].', $unique_name, $user->ID ), 10 );
 		} else {
 
-			// Since the user was authenticated with Azure AD, but not found in WordPress,
+			// Since the user was authenticated with Microsoft Entra ID, but not found in WordPress,
 			// need to decide whether to create a new user in WordPress on-the-fly, or to stop here.
 			if ( true === $this->settings->enable_auto_provisioning ) {
 
@@ -516,7 +516,7 @@ class AADSSO {
 				'Set default role [%s] for user [%s].', $this->settings->default_wp_role, $user->ID ), 10 );
 		} else {
 			$error_message = sprintf(
-				__( 'ERROR: Azure AD user %s is not a member of any group granting a role.', 'aad-sso-wordpress' ),
+				__( 'ERROR: Microsoft Entra ID user %s is not a member of any group granting a role.', 'aad-sso-wordpress' ),
 				$aad_user_id
 			);
 			AADSSO::debug_log( $error_message, 10 );
@@ -541,9 +541,9 @@ class AADSSO {
 	}
 
 	/**
-	 * Generates the URL used to initiate a sign-in with Azure AD.
+	 * Generates the URL used to initiate a sign-in with Microsoft Entra ID.
 	 *
-	 * @return string The authorization URL used to initiate a sign-in to Azure AD.
+	 * @return string The authorization URL used to initiate a sign-in to Microsoft Entra ID.
 	 */
 	function get_login_url() {
 		$antiforgery_id = com_create_guid();
@@ -552,7 +552,7 @@ class AADSSO {
 	}
 
 	/**
-	 * Generates the URL for logging out of Azure AD. (Does not log out of WordPress.)
+	 * Generates the URL for logging out of Microsoft Entra ID. (Does not log out of WordPress.)
 	 */
 	function get_logout_url() {
 
@@ -588,7 +588,7 @@ class AADSSO {
 	}
 
 	/**
-	 * Clears the current the session, and triggers a full Azure AD logout if needed.
+	 * Clears the current the session, and triggers a full Microsoft Entra ID logout if needed.
 	 */
 	function logout() {
 
@@ -621,8 +621,8 @@ class AADSSO {
 	 */
 	function print_plugin_not_configured() {
 		echo '<div id="message" class="error"><p>'
-		. __( 'Single Sign-on with Azure Active Directory required settings are not defined. '
-		      . 'Update them under Settings > Azure AD.', 'aad-sso-wordpress' )
+		. __( 'Single Sign-on with Microsoft Entra ID required settings are not defined. '
+		      . 'Update them under Settings > Microsoft Entra ID.', 'aad-sso-wordpress' )
 		      .'</p></div>';
 	}
 
@@ -644,7 +644,7 @@ class AADSSO {
 	}
 
 	/**
-	 * Renders the link used to initiate the login to Azure AD.
+	 * Renders the link used to initiate the login to Microsoft Entra ID.
 	 */
 	function print_login_link() {
 		$html = '<p class="aadsso-login-form-text">';

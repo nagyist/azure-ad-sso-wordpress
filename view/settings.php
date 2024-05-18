@@ -1,7 +1,7 @@
 <div class="wrap">
 
-	<h2><?php echo esc_html__( 'Single Sign-on with Azure Active Directory' , 'aad-sso-wordpress' ); ?></h2>
-	<p><?php echo esc_html__( 'Settings for configuring single sign-on with Azure Active Directory can be configured here.' , 'aad-sso-wordpress' ); ?></p>
+	<h2><?php echo esc_html__( 'Single Sign-on with Microsoft Entra ID' , 'aad-sso-wordpress' ); ?></h2>
+	<p><?php echo esc_html__( 'Settings for configuring single sign-on with Microsoft Entra ID can be configured here.' , 'aad-sso-wordpress' ); ?></p>
 
 	<form method="post" action="options.php">
 		<?php
